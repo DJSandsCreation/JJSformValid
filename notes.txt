@@ -1,0 +1,40 @@
+A Vanila JavaScript form validation.
+
+linked files, css & Js
+
+linked fontawesome
+
+used .field-name created + <div class="field-name"></div>
+
+body {
+  height: 100vh;
+  display: flex;  -- only one child 
+  background-color: rgb(6, 109, 245); -- reuse mutliple times
+  transition: background 0.5s ease; --transition the background 
+  position: relative; -- move all elements ontop of each other
+}
+
+
+.field-name,
+.field-email,
+.field-password,
+.field-finish {  --didnt add position center as planning to place them ontop of 
+  position: absolute;     eachother and animate them over each other
+  top: 50%;
+  left: 50%;
+}
+
+
+function validateEmail(email) {
+  // const validation = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+  const validation = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  // const validation = /^w+([.-]?w+)*@w+([.-]?w+)*(.w{2,3})+$/;
+  // The above is a regex that can validate almost all (99%) of the email addresses.Regex Example using JavaScript to Validate Email Adresses --https://www.ntu.edu.sg/home/ehchua/programming/howto/Regexe.html
+
+  if (validation.test(email.value)) {
+    error("rgb(245, 6, 6)");
+    return true;
+  } else {
+    error("rgb(6, 109, 245)");
+  }
+}
