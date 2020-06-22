@@ -1,0 +1,1 @@
+A Vanila JavaScript form validation.
